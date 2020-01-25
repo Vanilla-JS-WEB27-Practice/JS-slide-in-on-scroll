@@ -25,23 +25,23 @@
 
         <img src="http://unsplash.it/400/400" alt="random image from unslpash" class="align-left slide-in">
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati voluptas explicabo aut dolores nemo consequatur vitae cumque officiis. Pariatur, ut.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, culpa? Exercitationem, tempora sapiente iusto quo provident quam maxime repellat possimus quos? Ut totam doloremque inventore, quos, aut similique recusandae eveniet soluta voluptatibus earum corrupti. Pariatur accusamus ipsa eaque, iusto delectus voluptatibus nobis nesciunt ab veritatis voluptas dolorem deleniti reiciendis et repellendus, eius laudantium, atque similique quia aliquam at inventore. Laudantium nisi delectus, unde vero autem odio quam dicta doloremque vel vitae doloribus! Libero asperiores fugit odio, enim velit veritatis. Quasi.</p>
 
-        <img src="http://unsplash.it/400/401" alt="random image from unslpash" class="align-left slide-in">
+        <img src="http://unsplash.it/400/401" alt="random image from unslpash" class="align-right slide-in">
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati voluptas explicabo aut dolores nemo consequatur vitae cumque officiis. Pariatur, ut.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, culpa? Exercitationem, tempora sapiente iusto quo provident quam maxime repellat possimus quos? Ut totam doloremque inventore, quos, aut similique recusandae eveniet soluta voluptatibus earum corrupti. Pariatur accusamus ipsa eaque, iusto delectus voluptatibus nobis nesciunt ab veritatis voluptas dolorem deleniti reiciendis et repellendus, eius laudantium, atque similique quia aliquam at inventore. Laudantium nisi delectus, unde vero autem odio quam dicta doloremque vel vitae doloribus! Libero asperiores fugit odio, enim velit veritatis. Quasi.</p>
 
         <img src="http://unsplash.it/200/500" alt="random image from unslpash" class="align-left slide-in">
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati voluptas explicabo aut dolores nemo consequatur vitae cumque officiis. Pariatur, ut.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, culpa? Exercitationem, tempora sapiente iusto quo provident quam maxime repellat possimus quos? Ut totam doloremque inventore, quos, aut similique recusandae eveniet soluta voluptatibus earum corrupti. Pariatur accusamus ipsa eaque, iusto delectus voluptatibus nobis nesciunt ab veritatis voluptas dolorem deleniti reiciendis et repellendus, eius laudantium, atque similique quia aliquam at inventore. Laudantium nisi delectus, unde vero autem odio quam dicta doloremque vel vitae doloribus! Libero asperiores fugit odio, enim velit veritatis. Quasi.</p>
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati voluptas explicabo aut dolores nemo consequatur vitae cumque officiis. Pariatur, ut.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, culpa? Exercitationem, tempora sapiente iusto quo provident quam maxime repellat possimus quos? Ut totam doloremque inventore, quos, aut similique recusandae eveniet soluta voluptatibus earum corrupti. Pariatur accusamus ipsa eaque, iusto delectus voluptatibus nobis nesciunt ab veritatis voluptas dolorem deleniti reiciendis et repellendus, eius laudantium, atque similique quia aliquam at inventore. Laudantium nisi delectus, unde vero autem odio quam dicta doloremque vel vitae doloribus! Libero asperiores fugit odio, enim velit veritatis. Quasi.</p>
 
-        <img src="http://unsplash.it/400/400" alt="random image from unslpash" class="align-left slide-in">
+        <img src="http://unsplash.it/400/400" alt="random image from unslpash" class="align-right slide-in">
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati voluptas explicabo aut dolores nemo consequatur vitae cumque officiis. Pariatur, ut.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, culpa? Exercitationem, tempora sapiente iusto quo provident quam maxime repellat possimus quos? Ut totam doloremque inventore, quos, aut similique recusandae eveniet soluta voluptatibus earum corrupti. Pariatur accusamus ipsa eaque, iusto delectus voluptatibus nobis nesciunt ab veritatis voluptas dolorem deleniti reiciendis et repellendus, eius laudantium, atque similique quia aliquam at inventore. Laudantium nisi delectus, unde vero autem odio quam dicta doloremque vel vitae doloribus! Libero asperiores fugit odio, enim velit veritatis. Quasi.</p>
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati voluptas explicabo aut dolores nemo consequatur vitae cumque officiis. Pariatur, ut.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, culpa? Exercitationem, tempora sapiente iusto quo provident quam maxime repellat possimus quos? Ut totam doloremque inventore, quos, aut similique recusandae eveniet soluta voluptatibus earum corrupti. Pariatur accusamus ipsa eaque, iusto delectus voluptatibus nobis nesciunt ab veritatis voluptas dolorem deleniti reiciendis et repellendus, eius laudantium, atque similique quia aliquam at inventore. Laudantium nisi delectus, unde vero autem odio quam dicta doloremque vel vitae doloribus! Libero asperiores fugit odio, enim velit veritatis. Quasi.</p>
 
     </div>
 
@@ -60,7 +60,30 @@
                 timeout = setTimeout(later, wait);
                 if(callNow) func.apply(context, args);
             };
+        };
+
+        const sliderImages = document.querySelectorAll('.slide-in');
+
+        function checkSlide(e) {
+            // console.count(e);
+
+            sliderImages.forEach(sliderImage => {
+                // half way through the image
+                const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+
+                // bottom of the image
+                const imageBottom = sliderImage.offsetTop + sliderImage.height;
+                const isHalfShown = slideInAt > sliderImage.offsetTop;
+                const isNotScrolledPast = window.scrollY < imageBottom;
+                if(isHalfShown && isNotScrolledPast) {
+                    sliderImage.classList.add('active');
+                } else {
+                    sliderImage.classList.remove('active');
+                }
+            });
         }
+
+        window.addEventListener('scroll', debounce(checkSlide));
 
     </script>
 
@@ -93,6 +116,7 @@
             padding: 40px;
             text-align: 40px;
             text-align: justify;
+            height: 4000px;
         }
 
         .align-left {
@@ -101,8 +125,8 @@
         }
 
         .align-right {
-            float: left;
-            margin-right: 20px;
+            float: right;
+            margin-left: 20px;
         }
 
         .slide-in {
